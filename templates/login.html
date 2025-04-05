@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if session['usuario'] %}
+    <div style="text-align: right; margin: 1em 2em 0 0;">
+      <a href="/logout" style="background-color: #e53935; color: white; padding: 0.4em 1em; border-radius: 6px; text-decoration: none; font-weight: bold;">Cerrar sesión</a>
+    </div>
+  {% endif %}
+
+  <div style="max-width: 400px; margin: 4em auto; padding: 2em; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; ">
+    <h2 style="
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1em;
+    ">
+      Iniciar sesión en CRM
+    </h2>
+
+    <div style="text-align: center; margin-bottom: 2em;">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAx6camOf_G96Zcs2Zj34Yjmy0ysPd-p0oJQ&s"
+        alt="Pingüino"
+        style="height: 160px; width: auto;"
+      >
+    </div>
+    
+
+
+    
+    {% if error %}
+      <p style="color: red; font-weight: bold;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" style="display: flex; flex-direction: column; align-items: center;">
+      <input
+        type="text"
+        name="usuario"
+        placeholder="Nombre de usuario"
+        required
+        style="margin-bottom: 1em; padding: 0.6em 1em; border-radius: 6px; width: 80%; max-width: 300px; text-align: center;"
+      >
+    
+      <input
+        type="password"
+        name="contraseña"
+        placeholder="Contraseña"
+        required
+        style="margin-bottom: 1.5em; padding: 0.6em 1em; border-radius: 6px; width: 80%; max-width: 300px; text-align: center;"
+      >
+    
+      <button type="submit">Iniciar sesión</button>
+    </form>
+    
+    
+      
+  </div>
+{% endblock %} 

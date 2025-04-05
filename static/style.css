@@ -1,0 +1,82 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f4f9fb;
+    color: #003d4d;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #e0f7fa;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
+  nav {
+    margin-top: 0.5em;
+  }
+  
+  nav a {
+    text-decoration: none;
+    margin: 0 1em;
+    color: #00796b;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #004d40;
+  }
+  
+  main {
+    padding: 2em;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    margin-top: 2em;
+    color: #006064;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  table th,
+  table td {
+    padding: 0.75em 1em;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #b2ebf2;
+    color: #004d40;
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #e0f7fa;
+    color: #006064;
+    margin-top: 4em;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+  }

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div style="text-align: center; margin-top: 3em;">
+    <div style="font-size: 4em;">🐧</div>
+    <h2 style="margin-top: 0.2em; margin-bottom: 1em; color: #00796b;">Bienvenido al CRM de PINGÜINO</h2>
+    <div style="display: flex; justify-content: center; gap: 2em; flex-wrap: wrap;">
+      <a href="/admin/productos" class="btn-seccion">📦 Estocaje</a>
+      <a href="/admin/pedidos" class="btn-seccion">🧾 Ventas</a>
+      <a href="/admin/clientes" class="btn-seccion">👥 Clientes</a>
+    </div>
+  </div>
+
+  <style>
+    .btn-seccion {
+      display: inline-block;
+      background-color: #00acc1;
+      color: white;
+      padding: 1em 2em;
+      border-radius: 8px;
+      font-size: 1.1em;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn-seccion:hover {
+      background-color: #007c91;
+    }
+  </style>
+{% endblock %}

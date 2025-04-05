@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Clientes registrados</h2>
+
+<a href="/admin" style="display: inline-block; margin-bottom: 1em; background-color: #ccc; padding: 0.5em 1em; border-radius: 6px; text-decoration: none; color: #333;">← Volver</a>
+
+<form method="GET" action="{{ url_for('admin_clientes') }}" style="margin-bottom: 2em; display: flex; flex-wrap: wrap; gap: 1em;">
+  <input type="text" name="nombre" placeholder="Buscar por nombre" value="{{ request.args.get('nombre', '') }}">
+  <input type="text" name="email" placeholder="Buscar por email" value="{{ request.args.get('email', '') }}">
+  <button type="submit">Filtrar</button>
+  <a href="{{ url_for('admin_clientes') }}" style="text-decoration: none; padding: 0.5em 1em; background: #ccc; border-radius: 6px;">Limpiar</a>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Dirección</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cliente in clientes %}
+    <tr>
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nombre }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.direccion }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

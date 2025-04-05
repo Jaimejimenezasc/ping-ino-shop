@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PINGÜINO 🐧</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<div id="mensaje-alerta" class="alerta"></div>
+
+<body>
+  <header>
+    <div class="logo">🐧 PINGÜINO</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+      </ul>
+      <input type="text" id="buscador" placeholder="Buscar..." oninput="filtrarProductos()" />
+      <button id="idioma-btn" onclick="cambiarIdioma()">ES</button>
+
+      <div class="icono-carrito" onclick="toggleCarrito()">
+        🛒
+        <span id="contador-carrito">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-contenido">
+        <h1>Rompe el hielo con tu estilo ❄️</h1>
+        <p>Moda fresca, cómoda y con personalidad. Solo en PINGÜINO 🐧</p>
+        <a href="#catalogo" class="boton-cta">Explorar colección</a>
+      </div>
+    </section>
+
+    <section class="slider" id="slider">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80" alt="Slide 1" />
+        <div class="texto-slide">¡Rebajas de Invierno! ❄️ Hasta 50%</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80" alt="Slide 2" />
+        <div class="texto-slide">Nuevas chaquetas disponibles 🧥</div>
+      </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1602810318656-703f28d61707?auto=format&fit=crop&w=1200&q=80" alt="Slide 3" />
+        <div class="texto-slide">¡Descubre tu estilo PINGÜINO! 🐧</div>
+      </div>
+
+      <button class="prev" onclick="cambiarSlide(-1)">❮</button>
+      <button class="next" onclick="cambiarSlide(1)">❯</button>
+    </section>
+
+    <section id="catalogo">
+      <h2 class="titulo-catalogo">Catálogo de Productos</h2>
+      <div class="productos" id="lista-productos">
+        <!-- Los productos se insertarán con JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <section id="carrito" class="carrito-panel">
+    <span class="cerrar-carrito" onclick="toggleCarrito()">❌</span>
+    <h2>Tu carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: <span id="total">0</span>€</p>
+    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+    <button onclick="toggleCheckout()">Ir a pagar</button>
+  </section>
+
+  <section id="checkout" class="checkout-panel">
+    <span class="cerrar-checkout" onclick="toggleCheckout()">❌</span>
+    <h2>Finalizar compra</h2>
+    <div id="resumen-compra"></div>
+    <form id="formulario-compra" onsubmit="return procesarPago(event)">
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="text" placeholder="Dirección de envío" required />
+      <select id="metodo-pago" required>
+        <option value="">Método de pago</option>
+        <option value="tarjeta">Tarjeta de crédito</option>
+        <option value="paypal">PayPal</option>
+        <option value="bizum">Bizum</option>
+      </select>
+      <button type="submit">Confirmar compra</button>
+    </form>
+  </section>
+
+  <section id="modal-producto" class="modal-producto">
+    <div class="contenido-modal">
+      <span class="cerrar-modal" onclick="cerrarModal()">❌</span>
+      <h2 id="modal-nombre"></h2>
+      <img id="modal-imagen" src="" alt="Producto" />
+      <div id="colores"></div>
+      <div id="tallas">
+        <p>Selecciona una talla:</p>
+        <div class="tallas-opciones"></div>
+      </div>
+      <p id="modal-precio"></p>
+      <button onclick="añadirProductoDesdeModal()">Añadir al carrito</button>
+    </div>
+  </section>
+
+  <footer style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background-color: #e0f7fa; font-size: 0.9rem;">
+    <div id="info-contacto" style="text-align: left;">
+      <strong>Contacto:</strong><br>
+      📞 612 345 678<br>
+      ✉️ tutiendadeconfianza@compraalgo.com<br>
+      📍 Julián Romea 23, 0.03C
+    </div>
+  
+    <div id="copyright">
+      © 2025 PINGÜINO🐧
+    </div>
+  </footer>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
